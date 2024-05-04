@@ -42,7 +42,7 @@ services:
     volumes:
       - ./static:/app/static
       - ./media:/app/media
-    command: "celery -A petshop worker"
+    command: "celery -A pet_shop worker"
 
   bot:
     image: antuanuran/petshop:latest
@@ -68,7 +68,7 @@ services:
     networks:
       - private
     ports:
-      - "5677:5672"
+      - "5672:5672"
       - "15677:15672"
     environment:
       RABBITMQ_DEFAULT_USER: admin
